@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+"http://struts.apache.org/dtds/struts-config_1_3.dtd">
+		  
+<struts-config>
+    <form-beans>       
+        <form-bean name="bookForm" type="com.example.form.BookForm"/>
+        <form-bean name="userForm" type="com.example.form.UserForm"/>
+        
+    </form-beans> 
+    <action-mappings>
+	   
+	    
+	    <action path="/userDetails"
+                type="com.example.action.UserAction"
+                name="userForm"
+                scope="request"
+                input="/index.jsp">
+            <forward name="success" path="/books.jsp"/>
+        </action>
+
+        <!-- Action for adding books -->
+        <action path="/addBook"
+                type="com.example.action.BookAction"
+                name="bookForm"
+                scope="request">
+            <forward name="success" path="/summary.jsp"/>
+              </action>
+    </action-mappings>
+    
+</struts-config>
