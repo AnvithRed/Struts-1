@@ -15,7 +15,7 @@
 	    <action path="/userDetails"
                 type="com.example.action.UserAction"
                 name="userForm"
-                scope="request"
+                scope="session"
                 input="/index.jsp">
             <forward name="success" path="/books.jsp"/>
         </action>
